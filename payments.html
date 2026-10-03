@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Make a contribution | Pension360</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=modern-payments-1" />
+  </head>
+  <body class="modern-payment-page">
+    <header class="modern-nav modern-nav-static">
+      <div class="modern-container modern-nav-inner">
+        <a class="modern-logo" href="index.html"><span class="modern-logo-mark">P</span><span>pension<span>360</span></span></a>
+        <nav class="modern-nav-links" aria-label="Payment navigation">
+          <a href="index.html">Home</a>
+          <a href="dashboard.html">Workspace</a>
+          <a href="support.html">Support</a>
+        </nav>
+        <a class="modern-button modern-button-small" href="auth.html?mode=signup">Create account <span>↗</span></a>
+      </div>
+    </header>
+
+    <main class="payment-main">
+      <section class="payment-intro modern-container">
+        <p class="modern-kicker">Voluntary pension contribution</p>
+        <h1>Put your future<br /><em>in motion.</em></h1>
+        <p>Choose an approved payment route and make a contribution toward your retirement plan.</p>
+      </section>
+
+      <section class="payment-shell modern-container">
+        <div class="payment-provider-panel">
+          <div class="payment-panel-heading">
+            <div><p class="modern-kicker modern-kicker-dark">01 / Payment route</p><h2>Choose how to pay</h2></div>
+            <span class="secure-label">▣ Secure route</span>
+          </div>
+          <div class="provider-grid">
+            <button class="provider-card selected" type="button" data-provider="paystack" aria-pressed="true"><span class="provider-mark paystack-mark">P</span><span><strong>Paystack</strong><small>Cards & bank channels</small></span><i>✓</i></button>
+            <button class="provider-card" type="button" data-provider="flutterwave" aria-pressed="false"><span class="provider-mark flutterwave-mark">F</span><span><strong>Flutterwave</strong><small>Cards & local methods</small></span><i>✓</i></button>
+            <button class="provider-card" type="button" data-provider="remita" aria-pressed="false"><span class="provider-mark remita-mark">R</span><span><strong>Remita</strong><small>Bank & transfer options</small></span><i>✓</i></button>
+            <button class="provider-card" type="button" data-provider="interswitch" aria-pressed="false"><span class="provider-mark interswitch-mark">i</span><span><strong>Interswitch</strong><small>Cards & Verve</small></span><i>✓</i></button>
+          </div>
+          <div class="payment-note"><strong>Important:</strong> Pension360 is a technology experience layer. Contributions should be reconciled through your licensed PFA or approved pension partner. This prototype does not move money or confirm a pension contribution.</div>
+        </div>
+
+        <div class="payment-form-panel">
+          <div class="payment-panel-heading"><div><p class="modern-kicker modern-kicker-dark">02 / Contribution details</p><h2>Payment information</h2></div><span class="demo-label">DEMO MODE</span></div>
+          <form class="payment-form" data-payment-form>
+            <div class="payment-form-row">
+              <div class="payment-field"><label for="contribution-name">Contributor name</label><input id="contribution-name" name="name" type="text" placeholder="Your full name" required /></div>
+              <div class="payment-field"><label for="pfa-reference">PFA / RSA reference</label><input id="pfa-reference" name="reference" type="text" placeholder="Optional reference" /></div>
+            </div>
+            <div class="payment-field"><label for="amount">Contribution amount</label><div class="amount-input"><span>₦</span><input id="amount" name="amount" type="number" min="100" step="100" placeholder="50,000" required /></div></div>
+            <div class="payment-field"><label for="card-number">Card number</label><input id="card-number" name="card" inputmode="numeric" autocomplete="cc-number" maxlength="19" placeholder="••••  ••••  ••••  ••••" required /></div>
+            <div class="payment-form-row">
+              <div class="payment-field"><label for="expiry">Expiry date</label><input id="expiry" name="expiry" inputmode="numeric" autocomplete="cc-exp" placeholder="MM / YY" required /></div>
+              <div class="payment-field"><label for="cvv">Security code</label><input id="cvv" name="cvv" type="password" inputmode="numeric" autocomplete="cc-csc" maxlength="4" placeholder="•••" required /></div>
+            </div>
+            <label class="payment-consent"><input type="checkbox" required /> <span>I understand this is a demonstration payment flow and that real card details must only be entered in a licensed provider's hosted checkout.</span></label>
+            <p class="payment-message" data-payment-message aria-live="polite"></p>
+            <button class="modern-button payment-submit" type="submit">Continue securely <span>↗</span></button>
+          </form>
+          <div class="payment-security"><span>▣</span><p>Your card details are not stored by this prototype. A production implementation must redirect to or embed the selected provider's PCI-compliant hosted checkout.</p></div>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

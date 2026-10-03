@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Overview | Pension360</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=modern-app-1" />
+  </head>
+  <body class="app-body modern-app">
+    <div class="app-shell">
+      <aside class="app-sidebar">
+        <a class="brand" href="dashboard.html"><span class="brand-mark">P</span><span>PENSION360</span></a>
+        <p class="sidebar-label">Workspace</p>
+        <nav class="sidebar-nav" aria-label="Workspace navigation">
+          <a class="active" href="dashboard.html"><span class="side-icon">O</span>Overview</a>
+          <a href="planning.html"><span class="side-icon">P</span>Retirement planning</a>
+          <a href="verification.html"><span class="side-icon">V</span>Verification</a>
+          <a href="support.html"><span class="side-icon">S</span>Support centre</a>
+          <a href="profile.html"><span class="side-icon">U</span>Profile & security</a>
+        </nav>
+        <p class="sidebar-label">Account</p>
+        <button class="sidebar-action" type="button" data-logout><span class="side-icon">↗</span>Sign out</button>
+      </aside>
+      <div class="app-main">
+        <header class="app-header">
+          <button class="menu-toggle" type="button" data-menu-toggle aria-label="Open navigation">☰</button>
+          <div><strong>Overview</strong><span class="muted-text"> / Your pension workspace</span></div>
+          <div class="user-chip"><span class="avatar">U</span><span>Member account</span></div>
+        </header>
+        <main class="app-content">
+          <div class="welcome-row">
+            <div><p class="eyebrow accent">Good morning</p><h1>Welcome to your workspace</h1><p>Keep your retirement plans, verification and support requests in one place.</p></div>
+            <a class="button button-primary" href="planning.html">Plan my retirement</a>
+          </div>
+          <div class="dashboard-grid">
+            <article class="dashboard-card"><p class="eyebrow">Projected balance</p><div class="metric">₦24.8M</div><p>Estimated value at your target retirement age.</p></article>
+            <article class="dashboard-card"><p class="eyebrow">Retirement readiness</p><div class="metric">72%</div><p>Your current plan is moving in the right direction.</p></article>
+            <article class="dashboard-card"><p class="eyebrow">Next action</p><h3>Complete verification</h3><p>Finish your profile verification to unlock assisted services.</p><a class="text-link" href="verification.html">Start verification →</a></article>
+            <article class="dashboard-card wide"><h2>Your next steps</h2><p>Use the workspace navigation to manage your pension journey.</p><div class="quick-links"><a href="planning.html">Review my forecast →</a><a href="verification.html">Upload documents →</a><a href="support.html">Open a support request →</a><a href="profile.html">Update my profile →</a></div></article>
+            <article class="dashboard-card"><h3>Need help?</h3><p>Our support centre keeps every request visible from submission to resolution.</p><a class="button button-ghost" href="support.html">Visit support</a></article>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

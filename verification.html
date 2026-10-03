@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verification | Pension360</title>
+    <link rel="stylesheet" href="styles.css?v=modern-app-2" />
+  </head>
+  <body class="app-body modern-app">
+    <div class="app-shell">
+      <aside class="app-sidebar">
+        <a class="brand" href="dashboard.html"><span class="brand-mark">P</span><span>PENSION360</span></a>
+        <p class="sidebar-label">Workspace</p>
+        <nav class="sidebar-nav">
+          <a href="dashboard.html"><span class="side-icon">O</span>Overview</a>
+          <a href="planning.html"><span class="side-icon">P</span>Retirement planning</a>
+          <a class="active" href="verification.html"><span class="side-icon">V</span>Verification</a>
+          <a href="support.html"><span class="side-icon">S</span>Support centre</a>
+          <a href="profile.html"><span class="side-icon">U</span>Profile & security</a>
+        </nav>
+        <p class="sidebar-label">Account</p>
+        <button class="sidebar-action" type="button" data-logout><span class="side-icon">↗</span>Sign out</button>
+      </aside>
+
+      <div class="app-main">
+        <header class="app-header">
+          <button class="menu-toggle" type="button" data-menu-toggle aria-label="Open navigation">☰</button>
+          <strong>Verification</strong>
+          <div class="user-chip"><span class="avatar">U</span><span>Member account</span></div>
+        </header>
+
+        <main class="app-content">
+          <div class="welcome-row">
+            <div>
+              <p class="eyebrow accent">Protect</p>
+              <h1>Complete verification</h1>
+              <p>Keep your information current so support and benefit workflows stay smooth.</p>
+            </div>
+          </div>
+
+          <div class="dashboard-grid">
+            <article class="dashboard-card wide">
+              <p class="eyebrow">Verification status</p>
+              <h2>Profile review in progress</h2>
+              <p>Upload the documents below. We will show you what is complete, what is missing and what happens next.</p>
+              <div class="verification-progress">
+                <div><span>0 of 2 required documents uploaded</span><strong>0%</strong></div>
+                <div class="progress-bar"><span style="width: 0%"></span></div>
+              </div>
+            </article>
+
+            <article class="dashboard-card">
+              <h3>Personal details</h3>
+              <div class="metric">1 / 1</div>
+              <p>Complete</p>
+              <a class="text-link" href="profile.html">Review details →</a>
+            </article>
+
+            <article class="dashboard-card">
+              <h3>Documents</h3>
+              <div class="metric">0 / 2</div>
+              <p>Pending upload</p>
+              <a class="text-link" href="#document-checklist">See requirements →</a>
+            </article>
+
+            <article class="dashboard-card wide document-card" id="document-checklist">
+              <div class="document-heading">
+                <div>
+                  <p class="eyebrow">Required documents</p>
+                  <h2>What you need to upload</h2>
+                </div>
+                <span class="document-badge">2 required</span>
+              </div>
+              <p class="document-intro">Use clear, readable images or PDF scans. Your name and details should match your Pension360 profile.</p>
+
+              <div class="document-list">
+                <label class="document-item">
+                  <input type="file" accept=".jpg,.jpeg,.png,.pdf" data-document-input data-document-type="government_id" />
+                  <span class="document-icon">ID</span>
+                  <span class="document-copy">
+                    <strong>Valid government-issued ID</strong>
+                    <small>National ID, NIN slip, international passport, driver’s licence or voter’s card.</small>
+                    <em data-document-name>No file selected · JPG, PNG or PDF · Max 5 MB</em>
+                  </span>
+                  <span class="document-action">Choose file</span>
+                </label>
+
+                <label class="document-item">
+                  <input type="file" accept=".jpg,.jpeg,.png,.pdf" data-document-input data-document-type="rsa_evidence" />
+                  <span class="document-icon">RSA</span>
+                  <span class="document-copy">
+                    <strong>Pension / RSA evidence</strong>
+                    <small>RSA statement, PFA account evidence or an official document showing your pension reference.</small>
+                    <em data-document-name>No file selected · JPG, PNG or PDF · Max 5 MB</em>
+                  </span>
+                  <span class="document-action">Choose file</span>
+                </label>
+              </div>
+
+              <div class="document-help">
+                <strong>Need help?</strong>
+                <span>If you cannot access a document, contact support before uploading an unrelated file.</span>
+                <a href="support.html">Get assisted support →</a>
+              </div>
+            </article>
+
+            <article class="dashboard-card document-card">
+              <p class="eyebrow">Helpful guidance</p>
+              <h3>Before you upload</h3>
+              <ul class="verification-tips">
+                <li>Use a well-lit, uncropped document.</li>
+                <li>Make sure all four corners are visible.</li>
+                <li>Do not upload passwords or card details.</li>
+                <li>Only upload documents belonging to you.</li>
+              </ul>
+            </article>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
