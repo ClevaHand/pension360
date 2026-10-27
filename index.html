@@ -20,15 +20,27 @@
     <header class="modern-nav">
       <div class="modern-container modern-nav-inner">
         <a class="modern-logo" href="index.html">
-          <span class="modern-logo-mark">P</span>
+          <span class="modern-logo-mark" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><path d="M7 22.5 13 16l4.2 3.8L25 10" /><path d="M19.5 10H25v5.5" /><circle cx="7" cy="24" r="1.5" /></svg></span>
           <span>pension<span>360</span></span>
         </a>
         <nav class="modern-nav-links" aria-label="Main navigation">
-          <a href="#platform">Platform</a>
-          <a href="#journey">How it works</a>
-          <a href="#trust">Why Pension360</a>
+          <a href="platform.html">Platform</a>
+          <a href="journey.html">How it works</a>
+          <a href="trust.html">Why Pension360</a>
           <a href="payments.html">Payments</a>
         </nav>
+        <details class="modern-mobile-menu">
+          <summary aria-label="Open navigation">Menu <span aria-hidden="true">☰</span></summary>
+          <nav aria-label="Mobile navigation">
+            <a href="platform.html">Platform</a>
+            <a href="journey.html">How it works</a>
+            <a href="trust.html">Why Pension360</a>
+            <a href="payments.html">Payments</a>
+            <a href="auth.html">Sign in</a>
+            <a href="payments.html">Pay contribution</a>
+            <a href="auth.html?mode=signup">Get started</a>
+          </nav>
+        </details>
         <div class="modern-nav-actions">
           <a class="modern-login" href="auth.html">Sign in</a>
           <a class="modern-login" href="payments.html">Pay contribution</a>
@@ -49,7 +61,7 @@
           </p>
           <div class="modern-actions">
             <a class="modern-button" href="auth.html?mode=signup">Start your journey <span>↗</span></a>
-            <a class="modern-text-link" href="#platform">Explore the platform <span>↓</span></a>
+            <a class="modern-text-link" href="platform.html">Explore the platform <span>↗</span></a>
           </div>
           <div class="modern-hero-visual" aria-label="Growth and financial confidence illustration">
             <div class="modern-hero-photo-wrap">
@@ -164,7 +176,7 @@
             <span class="modern-card-number">06 / ASSISTANCE</span>
             <h3>Family assist</h3>
             <p>Task-specific help with protected boundaries — assistance never means automatic financial control.</p>
-            <a href="#trust">Our safeguards <span>↗</span></a>
+            <a href="trust.html">Our safeguards <span>↗</span></a>
           </article>
         </div>
       </section>
@@ -308,9 +320,9 @@
 
     <footer class="modern-footer">
       <div class="modern-container modern-footer-inner">
-        <a class="modern-logo" href="index.html"><span class="modern-logo-mark">P</span><span>pension<span>360</span></span></a>
+        <a class="modern-logo" href="index.html"><span class="modern-logo-mark" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><path d="M7 22.5 13 16l4.2 3.8L25 10" /><path d="M19.5 10H25v5.5" /><circle cx="7" cy="24" r="1.5" /></svg></span><span>pension<span>360</span></span></a>
         <p>Your pension. Your future. Without the stress.</p>
-        <div><a href="auth.html">Sign in</a><a href="auth.html?mode=signup">Register</a><a href="#platform">Platform</a></div>
+        <div><a href="auth.html">Sign in</a><a href="auth.html?mode=signup">Register</a><a href="platform.html">Platform</a></div>
       </div>
     </footer>
   </body>

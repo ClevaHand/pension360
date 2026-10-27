@@ -14,7 +14,7 @@
       <section class="auth-intro">
         <div class="auth-orb auth-orb-one"></div>
         <div class="auth-orb auth-orb-two"></div>
-        <a class="modern-logo" href="index.html"><span class="modern-logo-mark">P</span><span>pension<span>360</span></span></a>
+        <a class="modern-logo" href="index.html"><span class="modern-logo-mark" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><path d="M7 22.5 13 16l4.2 3.8L25 10" /><path d="M19.5 10H25v5.5" /><circle cx="7" cy="24" r="1.5" /></svg></span><span>pension<span>360</span></span></a>
         <div class="auth-intro-content">
           <p class="modern-kicker">Your retirement experience, in one place</p>
           <h1>Make your future<br /><em>feel clearer.</em></h1>
@@ -33,14 +33,14 @@
           <div class="auth-card-kicker">Member workspace</div>
           <h2 data-auth-title>Welcome back</h2>
           <p class="auth-card-lead">Sign in to continue your retirement journey.</p>
-          <form class="auth-form" data-auth-form>
+          <form class="auth-form" data-auth-form autocomplete="on">
             <div class="field">
               <label for="name">Full name</label>
               <input id="name" name="name" type="text" autocomplete="name" placeholder="Your full name" />
             </div>
             <div class="field">
               <label for="email">Email address</label>
-              <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
+              <input id="email" name="email" type="email" autocomplete="username" placeholder="you@example.com" required />
             </div>
             <div class="field">
               <label for="password">Password</label>

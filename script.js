@@ -58,6 +58,8 @@ document.addEventListener("DOMContentLoaded", () => {
   if (authForm) {
     const mode = new URLSearchParams(window.location.search).get("mode");
     const nameField = authForm.querySelector("[name=name]");
+    const emailField = authForm.querySelector("[name=email]");
+    const passwordField = authForm.querySelector("[name=password]");
     const title = document.querySelector("[data-auth-title]");
     const submit = authForm.querySelector("button[type=submit]");
     const switchLink = document.querySelector("[data-auth-switch]");
@@ -67,6 +69,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const renderMode = () => {
       const signup = currentMode === "signup";
       if (nameField) nameField.closest(".field").hidden = !signup;
+      if (emailField) emailField.autocomplete = "username";
+      if (passwordField) passwordField.autocomplete = signup ? "new-password" : "current-password";
       if (title) title.textContent = signup ? "Create your Pension360 account" : "Welcome back";
       if (submit) submit.textContent = signup ? "Create account" : "Sign in";
       if (switchLink) {

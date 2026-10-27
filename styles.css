@@ -653,12 +653,14 @@ img {
   }
 
   .modern-nav {
-    position: absolute;
+    position: fixed;
     z-index: 10;
     top: 0;
     right: 0;
     left: 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(11, 11, 11, 0.94);
+    backdrop-filter: blur(14px);
   }
 
   .modern-nav-inner {
@@ -715,11 +717,55 @@ img {
     color: var(--modern-orange-light);
   }
 
+  .modern-nav-links a[aria-current="page"] {
+    color: #fff;
+  }
+
   .modern-nav-actions {
     display: flex;
     align-items: center;
     gap: 22px;
     font-size: 0.82rem;
+  }
+
+  .modern-subpage-hero {
+    padding: 190px 0 110px;
+    background:
+      radial-gradient(circle at 78% 72%, rgba(255, 62, 27, 0.18), transparent 28%),
+      linear-gradient(180deg, #0b0b0b 0%, #111 100%);
+  }
+
+  .modern-subpage-hero .modern-container {
+    max-width: 1180px;
+  }
+
+  .modern-subpage-hero h1 {
+    max-width: 900px;
+    margin: 18px 0 24px;
+    color: #f7f7f4;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(3.4rem, 8vw, 7rem);
+    font-weight: 500;
+    letter-spacing: -0.09em;
+    line-height: 0.92;
+  }
+
+  .modern-subpage-hero h1 em,
+  .modern-accessibility-section h2 em {
+    color: var(--modern-orange);
+    font-style: normal;
+  }
+
+  .modern-subpage-hero > .modern-container > p:not(.modern-kicker) {
+    max-width: 600px;
+    margin: 0 0 30px;
+    color: rgba(255, 255, 255, 0.62);
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .modern-mobile-menu {
+    display: none;
   }
 
   .modern-login {
@@ -1728,6 +1774,62 @@ img {
       display: none;
     }
 
+    .modern-nav-actions {
+      display: none;
+    }
+
+    .modern-nav-inner {
+      position: relative;
+    }
+
+    .modern-mobile-menu {
+      display: block;
+      color: #fff;
+      font-size: 0.82rem;
+    }
+
+    .modern-mobile-menu summary {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 4px;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .modern-mobile-menu summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .modern-mobile-menu nav {
+      position: absolute;
+      z-index: 20;
+      top: calc(100% + 10px);
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      min-width: 210px;
+      padding: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 6px;
+      background: #131313;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+    }
+
+    .modern-mobile-menu nav a {
+      padding: 11px 12px;
+      border-radius: 3px;
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .modern-mobile-menu nav a:hover,
+    .modern-mobile-menu nav a[aria-current="page"] {
+      color: #fff;
+      background: rgba(255, 84, 40, 0.16);
+    }
+
     .modern-light-panel,
     .modern-cta-panel {
       padding-right: 28px;
@@ -1806,17 +1908,13 @@ img {
       width: min(100% - 32px, 1180px);
     }
 
-    .modern-nav-actions {
-      gap: 10px;
+    .modern-subpage-hero {
+      padding-top: 155px;
+      padding-bottom: 78px;
     }
 
-    .modern-login {
-      display: none;
-    }
-
-    .modern-button-small {
-      min-height: 32px;
-      padding: 0 10px;
+    .modern-subpage-hero h1 {
+      font-size: clamp(3.2rem, 16vw, 5.4rem);
     }
 
     .modern-hero {
@@ -2971,6 +3069,8 @@ img {
 
   /* Voluntary contribution payment prototype */
   .modern-payment-page {
+    --modern-orange: #ff5428;
+    --modern-orange-light: #ff8a38;
     min-height: 100vh;
     color: #f8f8f7;
     background:
@@ -2986,7 +3086,8 @@ img {
   }
 
   .modern-nav-static {
-    position: relative;
+    position: sticky;
+    top: 0;
   }
 
   .payment-main {
@@ -3371,4 +3472,195 @@ img {
   .footer-inner {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .modern-logo-mark {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border: 1px solid rgba(255, 255, 255, 0.23);
+    border-radius: 11px 11px 11px 3px;
+    background: linear-gradient(145deg, #ff7145, #e63b1b);
+    box-shadow: 0 4px 14px rgba(255, 84, 40, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease;
+  }
+
+  .modern-logo-mark svg {
+    width: 25px;
+    height: 25px;
+    overflow: visible;
+    fill: none;
+    stroke: #fff;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2;
+  }
+
+  .modern-logo:hover .modern-logo-mark {
+    transform: rotate(-8deg) scale(1.08);
+    box-shadow: 0 7px 22px rgba(255, 84, 40, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  }
+
+  .modern-site .modern-nav-links a,
+  .modern-site .modern-footer a,
+  .modern-site .modern-feature-card a,
+  .modern-site .modern-persona-card a,
+  .modern-site .modern-mobile-menu nav a {
+    position: relative;
+    transition: color 0.22s ease, transform 0.22s ease;
+  }
+
+  .modern-site .modern-nav-links a::after,
+  .modern-site .modern-footer-inner > div:last-child a::after {
+    position: absolute;
+    right: 0;
+    bottom: -5px;
+    left: 0;
+    height: 1px;
+    background: var(--modern-orange);
+    content: "";
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+  }
+
+  .modern-site .modern-nav-links a:hover::after,
+  .modern-site .modern-nav-links a[aria-current="page"]::after,
+  .modern-site .modern-footer-inner > div:last-child a:hover::after {
+    transform: scaleX(1);
+  }
+
+  .modern-site .modern-feature-card,
+  .modern-site .modern-persona-card,
+  .modern-site .modern-testimonial-grid article,
+  .modern-site .modern-chart-card,
+  .modern-app .dashboard-card {
+    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+
+  .modern-site .modern-feature-card:hover,
+  .modern-site .modern-persona-card:hover,
+  .modern-site .modern-testimonial-grid article:hover,
+  .modern-site .modern-chart-card:hover,
+  .modern-app .dashboard-card:hover {
+    z-index: 1;
+    transform: translateY(-6px);
+    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.2);
+  }
+
+  .modern-site .modern-feature-card a span,
+  .modern-site .modern-persona-card a span,
+  .modern-site .modern-button span {
+    display: inline-block;
+    transition: transform 0.22s ease;
+  }
+
+  .modern-site .modern-feature-card a:hover span,
+  .modern-site .modern-persona-card a:hover span,
+  .modern-site .modern-button:hover span {
+    transform: translate(3px, -2px);
+  }
+
+  .modern-site .modern-button {
+    box-shadow: 0 5px 16px rgba(255, 84, 40, 0.14);
+    transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .modern-site .modern-button:hover {
+    box-shadow: 0 10px 24px rgba(255, 84, 40, 0.3);
+  }
+
+  .modern-auth .modern-logo-mark {
+    border-color: rgba(255, 255, 255, 0.23);
+  }
+
+  .modern-auth .auth-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .modern-auth .auth-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 45px rgba(22, 24, 28, 0.12);
+  }
+
+  .modern-auth .back-link,
+  .modern-auth .auth-switch {
+    transition: color 0.2s ease, letter-spacing 0.2s ease;
+  }
+
+  .modern-auth .back-link:hover,
+  .modern-auth .auth-switch:hover {
+    color: #b93720;
+    letter-spacing: 0.02em;
+  }
+
+  .modern-auth .auth-form .button {
+    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .modern-auth .auth-form .button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(230, 71, 32, 0.25);
+  }
+
+  @keyframes modernTextEnter {
+    from {
+      opacity: 0;
+      transform: translateY(22px);
+      filter: blur(5px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+  }
+
+  .modern-site .modern-hero h1,
+  .modern-site .modern-subpage-hero h1,
+  .modern-payment-page .payment-intro h1,
+  .modern-app .welcome-row h1,
+  .modern-auth .auth-intro h1 {
+    animation: modernTextEnter 0.85s cubic-bezier(0.2, 0.75, 0.2, 1) both;
+  }
+
+  .modern-site .modern-hero .modern-kicker,
+  .modern-site .modern-subpage-hero .modern-kicker,
+  .modern-payment-page .payment-intro .modern-kicker,
+  .modern-app .welcome-row .eyebrow,
+  .modern-auth .auth-intro .modern-kicker {
+    animation: modernTextEnter 0.65s ease 0.12s both;
+  }
+
+  .modern-site .modern-hero-copy,
+  .modern-site .modern-subpage-hero > .modern-container > p:not(.modern-kicker),
+  .modern-payment-page .payment-intro > p:last-child,
+  .modern-auth .auth-intro-content > p:not(.modern-kicker) {
+    animation: modernTextEnter 0.75s ease 0.2s both;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto !important;
+    }
+
+    .modern-site *,
+    .modern-auth *,
+    .modern-payment-page *,
+    .modern-app *,
+    .modern-site *::before,
+    .modern-auth *::before,
+    .modern-payment-page *::before,
+    .modern-app *::before,
+    .modern-site *::after,
+    .modern-auth *::after,
+    .modern-payment-page *::after,
+    .modern-app *::after {
+      scroll-behavior: auto !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
